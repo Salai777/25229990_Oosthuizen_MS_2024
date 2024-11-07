@@ -197,8 +197,8 @@ def get_BPM():
     X_n = [3*Rn - 2*Gn for Rn, Gn in zip(R_n, G_n)]
     Y_n = [1.5*Rn + Gn - 1.5*Bn for Rn, Gn, Bn in zip(R_n, G_n, B_n)]
 
-    Xf = butter_bandpass_filter(X_n, lowcut, highcut, fps)
-    Yf = butter_bandpass_filter(Y_n, lowcut, highcut, fps)
+    Xf = butter_bandpass_filter(X_n)
+    Yf = butter_bandpass_filter(Y_n)
 
     alpha = np.std(Xf)/np.std(Yf)
 
